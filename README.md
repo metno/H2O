@@ -3,7 +3,8 @@ H2O source code
 
 Enter H2O source code directory
 
-'''
+```bash
+
 source /modules/centos7/conda/Feb2021/etc/profile.d/conda.sh
 conda activate production-04-2021
 
@@ -15,4 +16,5 @@ poetry run pip install --force-reinstall shapely --no-binary shapely
 poetry shell
 
 ./Pyflwdir/example.py
-'''
+
+```
