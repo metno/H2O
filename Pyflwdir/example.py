@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # Select sub catchments
     regs2sub = support.select_catchments(regs2sub, subs)
 
-    # TODO merge tif files  # noqa W0511
+    # TODO merge tif files  # noqa
     # read elevation data of the basin using rasterio
     extent, topomasked, out_image, nodata, transform, latlon,\
         crs, prof = support.read_elevation_data(regs2sub, DEM_FILE)
@@ -34,10 +34,10 @@ if __name__ == "__main__":
     hillshade = colors.LightSource(azdeg=115, altdeg=45).hillshade(topomasked, vert_exag=1e3)
     support.plot_streams(flw_obj, hillshade, extent, crs,
                  title=f"Streams based steepest gradient algorithm {str(subs)}",
-                 file="flw_streams_steepest_gradient" + "".join(subs) + ".png"
+                 file="flw_streams_steepest_gradient_" + "".join(subs) + ".png"
     )
 
-    support.write_tif_file(flw_obj, prof, f"{str(subs)}flwdird.tif")
+    support.write_tif_file(flw_obj, prof, "".join(subs) + "_flwdird.tif")
 
     gdf_subbas = support.calc_sub_basin(flw_obj, crs, min_area=MIN_AREA)
     support.plot_sub_basin(gdf_subbas,

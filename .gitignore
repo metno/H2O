@@ -1,0 +1,6 @@
+poetry.lock
+*.png
+*.tif
+Pyflwdir/*.png
+Pyflwdir/*.tif
+Pyflwdir/__pycache__
