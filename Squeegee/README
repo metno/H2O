@@ -1,0 +1,4 @@
+source /modules/centos7/conda/Feb2021/etc/profile.d/conda.sh
+conda activate production
+python3 -m pip install cf_xarray==0.7.4 --user
+python3 -m pip install cartopy==0.21 --user
