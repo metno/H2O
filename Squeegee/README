@@ -1,4 +1,10 @@
+#centos
 source /modules/centos7/conda/Feb2021/etc/profile.d/conda.sh
 conda activate production
 python3 -m pip install cf_xarray==0.7.4 --user
 python3 -m pip install cartopy==0.21 --user
+
+#redhat (Helene sitt env)
+source /modules/rhel8/conda/install/etc/profile.d/conda.sh
+conda activate /lustre/storeB/project/nwp/H2O/wp4/conda/xesmf_envn
+python -c "import esmpy"
